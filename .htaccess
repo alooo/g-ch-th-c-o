@@ -1,0 +1,50 @@
+php_value session.gc_maxlifetime 315360000
+php_value session.cookie_lifetime 315360000
+php_value session.use_cookies 1
+
+RewriteEngine On
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+
+
+## CLIENT - BY BENTAN CODER
+ErrorDocument 404 /404.php
+RewriteRule ^Auth/Profile$ public/client/Profile.php [L]
+RewriteRule ^Auth/Register$ public/client/Register.php [L]
+RewriteRule ^Auth/Login$ public/client/Login.php [L]
+RewriteRule ^Auth/Logout$ public/client/Logout.php [L]
+RewriteRule ^Auth/ForgotPassword$ public/client/ForgotPassword.php [L]
+RewriteRule ^Auth/ChangePassword$ public/client/ChangePassword.php [L]
+RewriteRule ^Withdraw$ public/client/Withdraw.php [L]
+RewriteRule ^History/Card$ public/client/HistoryCard.php [L]
+RewriteRule ^Api$ public/client/Api.php [L]
+RewriteRule ^Transfers$ public/client/Transfers.php [L]
+RewriteRule ^BuyCard$ public/client/BuyCard.php [L]
+RewriteRule ^pass2$ public/client/Pass2.php [L]
+
+## ADMIN - BY BENTAN CODER
+RewriteRule ^Admin/Home$ public/admin/Home.php [L]
+RewriteRule ^Admin/Users$ public/admin/Users.php [L]
+RewriteRule ^Admin/User/Edit/([A-Za-z0-9-]+) public/admin/EditUser.php?id=$1 [L]
+RewriteRule ^Admin/Setting$ public/admin/Setting.php [L]
+RewriteRule ^Admin/Withdraw$ public/admin/Withdraw.php [L]
+RewriteRule ^Admin/DongTien$ public/admin/Dongtien.php [L]
+RewriteRule ^Admin/Withdraw/Edit/([A-Za-z0-9-]+) public/admin/EditWithdraw.php?id=$1 [L]
+RewriteRule ^Admin/Cards$ public/admin/Cards.php [L]
+RewriteRule ^Admin/Transfers$ public/admin/Transfers.php [L]
+RewriteRule ^Admin/Setting/Card$ public/admin/SettingCard.php [L]
+RewriteRule ^Admin/BuyCard$ public/admin/BuyCard.php [L]
+RewriteRule ^Admin/SellCard$ public/admin/SellCard.php [L]
+RewriteRule ^Admin/StoreCard/([A-Za-z0-9-]+) public/admin/StoreCard.php?id=$1 [L]
+
+## CTV - BY BENTAN CODER
+RewriteRule ^Ctv/Home$ public/ctv/Home.php [L]
+RewriteRule ^Ctv/User$ public/ctv/User.php [L]
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
